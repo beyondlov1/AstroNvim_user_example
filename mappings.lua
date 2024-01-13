@@ -9,14 +9,27 @@ return {
     -- second key is the lefthand side of the map
 
     -- navigate buffer tabs with `H` and `L`
-    -- L = {
-    --   function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
-    --   desc = "Next buffer",
+    ["<a-l>"] = {
+      function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
+      desc = "Next buffer",
+    },
+    ["<a-h>"] = {
+      function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
+      desc = "Previous buffer",
+    },
+    -- ["<a-o>"] = {
+    --   function()
+    --     if vim.bo.filetype == "neo-tree" then
+    --       vim.cmd.wincmd "p"
+    --       vim.cmd.Neotree "toggle"
+    --     else
+    --       vim.cmd.Neotree "focus"
+    --     end
+    --   end,
     -- },
-    -- H = {
-    --   function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
-    --   desc = "Previous buffer",
-    -- },
+    ["<a-o>"] = {
+      "<cmd>Neotree toggle<cr>", desc = "Toggle Explorer"
+    },
 
     -- mappings seen under group name "Buffer"
     ["<leader>bD"] = {
@@ -32,9 +45,40 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    ["<S-j>"] = { "<C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E>" },
+    ["<S-k>"] = { "<C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y>" },
+    [";"] = { "$" },
+    ["<tab>"] = { "^i<tab><esc>" },
+    ["<S-tab>"] = { "^i<BS><esc>" },
+    ["d;"] = { ";$" },
+    ["md"] = { "diw" },
+    ["my"] = { "yiw" },
+    ["ms"] = { "lbPldehyiw" },
+    ["L"] = { "$" },
+    ["H"] = { "^" },
+    ["l"] = { "e" },
+    ["h"] = { "b" },
+    ["<a-left>"] = { "<C-o>" },
+    ["<a-right>"] = { "<C-i>" },
+    ["mm"] = {
+      function() require("Comment.api").toggle.linewise.count(vim.v.count > 0 and vim.v.count or 1) end,
+      desc = "Toggle comment line",
+    },
+  },
+  v = {
+    ["<tab>"] = { ">" },
+    ["<S-tab>"] = { "<" },
+    ["<S-j>"] = { "j" },
+    ["<S-k>"] = { "k" },
+    [";"] = { "$" },
+    ["mm"] = {
+      "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>",
+      desc = "Toggle comment for selection",
+    },
   },
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
+    ["S-k"] = false
   },
 }

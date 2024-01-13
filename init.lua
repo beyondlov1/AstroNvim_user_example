@@ -52,6 +52,11 @@ return {
     servers = {
       -- "pyright"
     },
+    mappings = {
+      n = {
+        K = false
+      }
+    }
   },
 
   -- Configure require("lazy").setup() options
