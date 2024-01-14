@@ -86,5 +86,15 @@ return {
     --     ["~/%.config/foo/.*"] = "fooscript",
     --   },
     -- }
+    vim.api.nvim_create_augroup("autohideneotree", { clear = true })
+    vim.api.nvim_create_autocmd("User", {
+      desc = "Hide tabline when only one buffer and one tab", -- nice description
+      -- triggered when vim.t.bufs is updated
+      pattern = "AstroBufsUpdated", -- the pattern is the name of our User autocommand events
+      group = "autohideneotree", -- add the autocmd to the newly created augroup
+      callback = function()
+        vim.cmd.Neotree "close"
+      end,
+    })
   end,
 }

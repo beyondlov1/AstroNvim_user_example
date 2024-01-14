@@ -64,6 +64,10 @@ return {
       function() require("Comment.api").toggle.linewise.count(vim.v.count > 0 and vim.v.count or 1) end,
       desc = "Toggle comment line",
     },
+    -- ["/"] = { function() require("telescope.builtin").live_grep() end, desc = "Find words" },
+    ["/"] = { 
+      function() require("telescope.builtin").current_buffer_fuzzy_find() end, desc = "Find words in current buffer" 
+    },
   },
   v = {
     ["<tab>"] = { ">" },
