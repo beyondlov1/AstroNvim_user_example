@@ -68,6 +68,15 @@ return {
     ["/"] = { 
       function() require("telescope.builtin").current_buffer_fuzzy_find() end, desc = "Find words in current buffer" 
     },
+    ["s"] = {
+      ":s/"
+    },
+    ["S"] = {
+      ":%s/"
+    },
+    ["zl"] = {
+      "za"
+    },
   },
   v = {
     ["<tab>"] = { ">" },
@@ -75,6 +84,8 @@ return {
     ["<S-j>"] = { "j" },
     ["<S-k>"] = { "k" },
     [";"] = { "$" },
+    ["L"] = { "$" },
+    ["H"] = { "^" },
     ["mm"] = {
       "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>",
       desc = "Toggle comment for selection",
