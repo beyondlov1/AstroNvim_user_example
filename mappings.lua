@@ -77,6 +77,13 @@ return {
     ["zl"] = {
       "za"
     },
+    ["zm"] = {
+      -- function()
+      --   require("nvim-treesitter.textobjects.move").goto_previous_start( "@function.outer") 
+      --   require("aerial.command").tree_toggle({bang=true})
+      -- end,
+      "<right><cmd>lua require('nvim-treesitter.textobjects.move').goto_previous_start('@function.outer')<cr>za"
+    },
   },
   v = {
     ["<tab>"] = { ">" },
