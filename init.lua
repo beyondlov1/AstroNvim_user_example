@@ -55,7 +55,6 @@ return {
     mappings = {
       n = {
         K = false,
-        -- zl = false,
       }
     }
   },

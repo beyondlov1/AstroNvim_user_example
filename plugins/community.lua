@@ -6,5 +6,7 @@ return {
 
   -- { import = "astrocommunity.colorscheme.catppuccin" },
   -- { import = "astrocommunity.completion.copilot-lua-cmp" },
-  { import = "astrocommunity.motion.leap-nvim" },
+  -- { import = "astrocommunity.motion.leap-nvim" },
+  -- { import = "astrocommunity.motion.flash-nvim" }, -- 自己配置, 不用社区的
+  { import = "astrocommunity.motion.mini-surround" },
 }
