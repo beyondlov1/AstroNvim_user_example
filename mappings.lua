@@ -87,6 +87,11 @@ return {
       -- end,
       "<right><cmd>lua require('nvim-treesitter.textobjects.move').goto_previous_start('@function.outer')<cr>za"
     },
+    ["r"] = {
+      function()
+            vim.lsp.buf.rename()
+      end,
+    },
   },
   v = {
     ["<tab>"] = { ">" },
