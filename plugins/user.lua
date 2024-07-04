@@ -76,5 +76,5 @@ return {
           remove_blankline_trail = true,
         },
       },
-    }
+    },
   }

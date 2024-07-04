@@ -45,8 +45,8 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
-    ["<S-j>"] = { "<C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E>" },
-    ["<S-k>"] = { "<C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y>" },
+    ["<S-j>"] = { "<C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E>" },
+    ["<S-k>"] = { "<C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y>" },
     [";"] = { "$" },
     ["<tab>"] = { "^i<tab><esc>" },
     ["<S-tab>"] = { "^i<BS><esc>" },
@@ -68,12 +68,27 @@ return {
     ["/"] = { 
       function() require("telescope.builtin").current_buffer_fuzzy_find() end, desc = "Find words in current buffer" 
     },
+    -- ["gl"] = { 
+    --   function() require("telescope.builtin").resume() end, desc = "Find words in current buffer" 
+    -- },
+    ["gl"] = {
+      "*"
+    },
     ["s"] = {
       ":s/"
     },
     ["\""] = {
       "viwdi\"<esc>pa\"<esc>"
     },
+    -- ["zd"] = {
+    --   function()
+    --     -- local lnum,col = vim.fn.searchpairpos('{', 'col', '}', 'n')
+    --     -- local lnum,col = vim.fn.searchpos('{', 'col', '}', 'n')
+    --     -- local b = vim.fn.search('"', 'b', vim.fn.line("."))
+    --     local e = vim.fn.search('[".\'\\)\\]\\}\n$]', '', vim.fn.line("."))
+    --     -- "hello word"  ("yes
+    --   end
+    -- },
     ["S"] = {
       ":%s/"
     },
@@ -92,6 +107,9 @@ return {
             vim.lsp.buf.rename()
       end,
     },
+    ["gp"] = {
+      "<cmd>!copyq paste;copyq next;<cr><cr>"
+    },
   },
   v = {
     ["<tab>"] = { ">" },
@@ -104,6 +122,9 @@ return {
     ["mm"] = {
       "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>",
       desc = "Toggle comment for selection",
+    },
+    ["s"] = {
+      ":s/"
     },
   },
   t = {
