@@ -97,5 +97,9 @@ return {
         vim.cmd.Neotree "close"
       end,
     })
+    -- local nvim_lsp = require("lspconfig")
+    -- nvim_lsp.pyright.setup({
+    --   cmd = {'pyright-langserver', '--stdio'}
+    -- })
   end,
 }

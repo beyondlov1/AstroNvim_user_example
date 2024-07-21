@@ -110,6 +110,22 @@ return {
     ["gp"] = {
       "<cmd>!copyq paste;copyq next;<cr><cr>"
     },
+    ["gsue"] = {
+      function ()
+        local startpos = vim.fn.getpos('v')
+        -- local endpos = vim.fn.getcurpos()
+        -- vim.fn.printf("%d %d", startpos[2], endpos[2])
+        local endpos = vim.api.nvim_win_get_cursor(0)
+        print(endpos[2])
+        -- return vim.fn.getcurpos()
+      end,
+    },
+    ["gsu"] = {
+      "vaw:s/\\<\\u\\|\\l\\u\\|\\d\\u/\\= join(split(tolower(submatch(0)), '\\zs'), '_')/g<cr>"
+    },
+    ["gsc"] = {
+      "vaw:s/_\\l/\\= join(split(toupper(submatch(0)), '_'), '')/g<cr>"
+    },
   },
   v = {
     ["<tab>"] = { ">" },
