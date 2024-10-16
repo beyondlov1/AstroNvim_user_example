@@ -111,6 +111,7 @@ return {
       "<cmd>!copyq paste;copyq next;<cr><cr>"
     },
     ["gsue"] = {
+      -- 暂未完成
       function ()
         local startpos = vim.fn.getpos('v')
         -- local endpos = vim.fn.getcurpos()
@@ -126,6 +127,9 @@ return {
     ["gsc"] = {
       "vaw:s/_\\l/\\= join(split(toupper(submatch(0)), '_'), '')/g<cr>"
     },
+    ["gss"] = {
+      "yiw:s/"
+    }
   },
   v = {
     ["<tab>"] = { ">" },

@@ -1,3 +1,5 @@
+vim.lsp.set_log_level("off")
+
 return {
   -- Configure AstroNvim updates
   updater = {
@@ -24,6 +26,12 @@ return {
   diagnostics = {
     virtual_text = true,
     underline = true,
+  },
+
+  luasnip = {
+    log = {
+        level = nil, -- 关闭日志写入
+    },
   },
 
   lsp = {
