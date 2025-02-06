@@ -9,4 +9,6 @@ return {
   -- { import = "astrocommunity.motion.leap-nvim" },
   -- { import = "astrocommunity.motion.flash-nvim" }, -- 自己配置, 不用社区的
   { import = "astrocommunity.motion.mini-surround" },
+  { import = "astrocommunity.snippet.nvim-snippets" },
+  { import = "astrocommunity.completion.fittencode-nvim" },
 }
