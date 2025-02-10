@@ -127,4 +127,8 @@ return {
         },
       },
     },
+    {
+      "git@gitee.com:beyondlov1/fcitx.nvim.git",
+      event = "User AstroFile",
+    }
   }
