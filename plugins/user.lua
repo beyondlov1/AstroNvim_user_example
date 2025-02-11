@@ -150,7 +150,8 @@ return {
     -- Customize or remove this keymap to your liking
     keys = {
       {
-        "<leader>f",
+        -- "<leader>f",
+        "<C-F>",
         function() require("conform").format { async = true } end,
         mode = "",
         desc = "格式化代码",
